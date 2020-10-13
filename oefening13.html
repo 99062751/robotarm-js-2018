@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script src="./robot-arm.js"></script>
+        <script>
+  var canvas = document.getElementById("canvas");
+  var robotArm = new RobotArm(canvas);
+  robotArm.speed=600;
+
+  robotArm.randomLevel( 1, 8);
+
+  // Je eigen code plaats je hier.
+
+
+var aantal= 1;
+
+          robotArm.grab();
+
+    while(robotArm.scan() != null){              
+
+          for (var right = 0; right < aantal; right++) {
+              robotArm.moveRight();
+          }
+
+                  robotArm.drop();
+
+              for (var left = 0; left < aantal; left++) {
+                  robotArm.moveLeft();
+             }
+                  robotArm.moveLeft();
+                  aantal= aantal + 1;
+
+
+          robotArm.grab();                  
+    }
+
+  robotArm.run();
+  robotArm.speed= 500;
+
+</script>
+    </body>
+</html>
