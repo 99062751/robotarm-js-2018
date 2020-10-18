@@ -21,21 +21,21 @@ var aantal= 5;
       
         for (var blokken = 1; blokken < aantal; blokken++) {   
 
-          robotArm.grab();
+            robotArm.grab();
 
             for (var rechts= 0; rechts < 5; rechts++) {  
               robotArm.moveRight();    
             }
 
-              robotArm.drop();
+            robotArm.drop();
 
-                for (var links= 0; links < 5; links++) {  
-                  robotArm.moveLeft();    
-                }
+            for (var links= 0; links < 5; links++) {  
+                robotArm.moveLeft();    
+            }
         }
-          aantal= aantal - 1;
+        aantal= aantal - 1;
 
-          robotArm.moveLeft();
+        robotArm.moveLeft();
     }           
 
   robotArm.speed= 600;
